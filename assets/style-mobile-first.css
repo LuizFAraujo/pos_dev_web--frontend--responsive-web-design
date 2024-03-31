@@ -14,7 +14,10 @@ body {
 .container {
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: center;
+
+  flex-direction: column;
+
   margin: 0 auto;
   max-width: 1150px;
   height: 120vh;
@@ -32,7 +35,9 @@ body {
 }
 
 .thumbnail_container {
-  display: flex;
+  display: none;
+  /* display: flex; */
+
   justify-content: space-between;
   gap: 0.7rem;
 }
@@ -71,6 +76,7 @@ body {
 
 .adquirir {
   display: flex;
+  flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   gap: 1rem;
@@ -79,7 +85,7 @@ body {
 .valores {
   display: flex;
   flex-direction: column;
-  align-items: end;
+  align-items: center;
   gap: 0.3rem;
 }
 
@@ -94,6 +100,8 @@ body {
 }
 
 .btn-comprar {
+  width: 100%;
+
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
   color: #fff;
@@ -128,6 +136,18 @@ strong {
 }
 
 /* ==================================================== */
+@media (min-width: 700px) {
+  .container {
+    flex-direction: row;
+    align-items: start;
+  }
+
+  .thumbnail_container {
+    display: flex;
+  }
+}
+
+/* ==================================================== */
 @media (min-width: 700px) and (max-width: 999px) {
   .images_container {
     max-width: 409px;
@@ -139,40 +159,29 @@ strong {
   }
 
   .adquirir {
-    flex-direction: column;
     align-items: flex-start;
   }
 
   .valores {
     align-items: start;
   }
-
-  .btn-comprar {
-    width: 100%;
-  }
 }
 
 /* ==================================================== */
-@media (min-width: 0px) and (max-width: 699px) {
-  .thumbnail_container {
-    display: none;
-  }
-
-  .container {
-    flex-direction: column;
-    align-items: center;
+@media (min-width: 1000px) {
+  .images_container {
+    max-width: 550px;
   }
 
   .adquirir {
-    flex-direction: column;
-    margin-top: 0.8rem;
+    flex-direction: row;
   }
 
   .valores {
-    align-items: center;
+    align-items: end;
   }
 
   .btn-comprar {
-    width: 100%;
+    width: auto;
   }
 }

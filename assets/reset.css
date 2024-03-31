@@ -1,0 +1,257 @@
+/* ================================================================= */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ================================================================= */
+/* ================================================================= */
+/* ================================================================= */
+
+/***
+    The new CSS reset - version 1.11.2 (last updated 15.11.2023)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+
+Remova todos os estilos do "User-Agent-Stylesheet", exceto a propriedade 'display'
+     - A parte do "symbol *" é para resolver o bug do sprite SVG do Firefox
+     - O elemento "html" é excluído, caso contrário, um bug no Chrome quebra a propriedade de hífens CSS (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+
+*:where(
+    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+  ) {
+  all: unset;
+  display: revert;
+}
+
+/* Valor de dimensionamento de caixa */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Corrigir o aumento do tamanho da fonte no Safari móvel no modo paisagem */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Reaplique o cursor do ponteiro para tags âncora */
+a,
+button {
+  cursor: revert;
+}
+
+/* Remover estilos de lista (marcadores/números) */
+ol,
+ul,
+menu,
+summary {
+  list-style: none;
+}
+
+/* Para que as imagens não possam ultrapassar seu contêiner */
+img {
+  max-inline-size: 100%;
+  max-block-size: 100%;
+}
+
+/* remove espaçamento entre células em tabelas */
+table {
+  border-collapse: collapse;
+}
+
+/* Safari - resolvendo problema ao usar user-select:none na entrada de texto <body> não funciona */
+input,
+textarea {
+  -webkit-user-select: auto;
+}
+
+/* reverter a propriedade 'espaço em branco' para elementos textarea no Safari */
+textarea {
+  white-space: revert;
+}
+
+/* estilo mínimo para permitir estilizar o elemento medidor */
+meter {
+  -webkit-appearance: revert;
+  appearance: revert;
+}
+
+/* texto pré-formatado - use apenas para este recurso */
+:where(pre) {
+  all: revert;
+  box-sizing: border-box;
+}
+
+/* redefinir a opacidade do texto padrão do espaço reservado de entrada */
+::placeholder {
+  color: unset;
+}
+
+/* corrija o recurso do atributo 'oculto'.
+  exibição: reverter; reverter para elemento em vez de atributo */
+:where([hidden]) {
+  display: none;
+}
+
+/* reverter para bug nos navegadores Chromium
+  - a correção para o atributo editável do conteúdo funcionará corretamente.
+  - webkit-user-select: automático; adicionado para Safari no caso de usar user-select:none no elemento wrapper*/
+:where([contenteditable]:not([contenteditable="false"])) {
+  -moz-user-modify: read-write;
+  -webkit-user-modify: read-write;
+  overflow-wrap: break-word;
+  -webkit-line-break: after-white-space;
+  -webkit-user-select: auto;
+}
+
+/* aplique novamente o recurso arrastável - existe apenas no Chromium e Safari */
+:where([draggable="true"]) {
+  -webkit-user-drag: element;
+}
+
+/* Reverter comportamento nativo do Modal */
+:where(dialog:modal) {
+  all: revert;
+  box-sizing: border-box;
+}
+
+/* Remover estilos de webkit de resumo de detalhes */
+::-webkit-details-marker {
+  display: none;
+}
+
+/* ================================================================= */
